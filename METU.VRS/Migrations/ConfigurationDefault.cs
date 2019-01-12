@@ -84,10 +84,11 @@
             //StickerTerm
             StickerTerm longterm = new StickerTerm() { Type = TermTypes.LongTerm, StartDate = new DateTime(2018, 1, 1), EndDate = new DateTime(2099, 1, 1) };
             StickerTerm calenderyear2018 = new StickerTerm() { Type = TermTypes.CalendarYear, StartDate = new DateTime(2018, 1, 1), EndDate = new DateTime(2019, 1, 1) };
+            StickerTerm calenderyear2019 = new StickerTerm() { Type = TermTypes.CalendarYear, StartDate = new DateTime(2019, 1, 1), EndDate = new DateTime(2020, 1, 1) };
             StickerTerm academicyear2017 = new StickerTerm() { Type = TermTypes.AcademicYear, StartDate = new DateTime(2017, 10, 1), EndDate = new DateTime(2018, 10, 1) };
             StickerTerm academicyear2018 = new StickerTerm() { Type = TermTypes.AcademicYear, StartDate = new DateTime(2018, 10, 1), EndDate = new DateTime(2019, 10, 1) };
 
-            context.StickerTerms.AddOrUpdate(a => new { a.Type, a.StartDate, a.EndDate }, new StickerTerm[] { longterm, calenderyear2018, academicyear2018 });
+            context.StickerTerms.AddOrUpdate(a => new { a.Type, a.StartDate, a.EndDate }, new StickerTerm[] { longterm, calenderyear2018, academicyear2018, calenderyear2019 });
 
 
             //StickerType
@@ -113,14 +114,14 @@
             Quota q1 = new Quota() { UID = "q1", Term = longterm, Division = null, StickerFee = 40, TotalQuota = -1, Type = st1 };
             Quota q2 = new Quota() { UID = "q2", Term = longterm, Division = null, StickerFee = 40, TotalQuota = -1, Type = st2 };
             Quota q3 = new Quota() { UID = "q3", Term = longterm, Division = null, StickerFee = 60, TotalQuota = -1, Type = st3 };
-            Quota q4 = new Quota() { UID = "q4", Term = calenderyear2018, Division = null, StickerFee = 700, TotalQuota = 100, Type = st4 };
-            Quota q5 = new Quota() { UID = "q5", Term = calenderyear2018, Division = null, StickerFee = 60, TotalQuota = 100, Type = st5 };
+            Quota q4 = new Quota() { UID = "q4", Term = calenderyear2019, Division = null, StickerFee = 700, TotalQuota = 100, Type = st4 };
+            Quota q5 = new Quota() { UID = "q5", Term = calenderyear2019, Division = null, StickerFee = 60, TotalQuota = 100, Type = st5 };
             Quota q6 = new Quota() { UID = "q6", Term = academicyear2018, Division = null, StickerFee = 60, TotalQuota = 100, Type = st6 };
-            Quota q7 = new Quota() { UID = "q7", Term = calenderyear2018, Division = null, StickerFee = 700, TotalQuota = 100, Type = st7 };
-            Quota q8 = new Quota() { UID = "q8", Term = calenderyear2018, Division = null, StickerFee = 60, TotalQuota = 100, Type = st8 };
-            Quota q9 = new Quota() { UID = "q9", Term = calenderyear2018, Division = null, StickerFee = 60, TotalQuota = 1000, Type = st9 };
-            Quota q10 = new Quota() { UID = "q10", Term = calenderyear2018, Division = null, StickerFee = 700, TotalQuota = -1, Type = st10 };
-            Quota q11 = new Quota() { UID = "q11", Term = calenderyear2018, Division = null, StickerFee = 600, TotalQuota = 5000, Type = st11 };
+            Quota q7 = new Quota() { UID = "q7", Term = calenderyear2019, Division = null, StickerFee = 700, TotalQuota = 100, Type = st7 };
+            Quota q8 = new Quota() { UID = "q8", Term = calenderyear2019, Division = null, StickerFee = 60, TotalQuota = 100, Type = st8 };
+            Quota q9 = new Quota() { UID = "q9", Term = calenderyear2019, Division = null, StickerFee = 60, TotalQuota = 1000, Type = st9 };
+            Quota q10 = new Quota() { UID = "q10", Term = calenderyear2019, Division = null, StickerFee = 700, TotalQuota = -1, Type = st10 };
+            Quota q11 = new Quota() { UID = "q11", Term = calenderyear2019, Division = null, StickerFee = 600, TotalQuota = 5000, Type = st11 };
             Quota q12 = new Quota() { UID = "q12", Term = academicyear2018, Division = II, StickerFee = 500, TotalQuota = 1, Type = st12 };
             Quota q13 = new Quota() { UID = "q13", Term = academicyear2018, Division = II, StickerFee = 100, TotalQuota = 100, Type = st13 };
             Quota q14 = new Quota() { UID = "q14", Term = academicyear2018, Division = null, StickerFee = 300, TotalQuota = 500, Type = st14 };
@@ -134,7 +135,7 @@
             Quota q22 = new Quota() { UID = "q22", Term = academicyear2017, Division = IAM, StickerFee = 300, TotalQuota = 2, Type = st12 };
 
             context.Quotas.AddOrUpdate(a => a.UID, new Quota[] { q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22 });
-            
+
             Vehicle ve100 = new Vehicle { OwnerName = e100.Name, PlateNumber = "06AA100", RegistrationNumber = "AA100000", Type = VehicleType.Car };
             Vehicle ve200 = new Vehicle { OwnerName = e200.Name, PlateNumber = "06AA200", RegistrationNumber = "AA200000", Type = VehicleType.Car };
             Vehicle ve101 = new Vehicle { OwnerName = e101.Name, PlateNumber = "06AA101", RegistrationNumber = "AA101000", Type = VehicleType.Car };

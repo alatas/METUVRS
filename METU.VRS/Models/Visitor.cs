@@ -17,7 +17,7 @@ namespace METU.VRS.Models
         public string Name { get; set; }
 
         [DataType(DataType.EmailAddress)]
-        [RegularExpression(@"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", ErrorMessage = "Enter a valid email address (eg. john@example.com)")]
+        [EmailAddress(ErrorMessage = "Enter a valid email address, please refer (https://en.wikipedia.org/wiki/Email_address#Examples)")]
         [Display(Name = "Visitor Email")]
         [MaxLength(100)]
         public string Email { get; set; }
@@ -32,7 +32,6 @@ namespace METU.VRS.Models
         [Required]
         [Display(Name = "Visit Date")]
         [DataType(DataType.DateTime)]
-        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
         public DateTime VisitDate { get; set; } = DateTime.Today;
 
         [DataType(DataType.Date)]

@@ -7,7 +7,7 @@ namespace METU.VRS.Models
         public int ID { get; set; }
 
         [Required]
-        [RegularExpression(@"\d\d[A-Z]{1,4}\d{1,4}", ErrorMessage = "Plate number must follow the pattern, like 06AA1234")]
+        [RegularExpression(@"(0[1-9]|[1-7][0-9]|8[0-1])[A-Z]{1,4}\d{1,4}", ErrorMessage = "Plate number must follow the pattern, like 06AA1234")]
         [Display(Name = "Plate Number")]
         [MaxLength(10)]
         public string PlateNumber { get; set; }
